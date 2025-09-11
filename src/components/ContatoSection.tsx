@@ -38,24 +38,33 @@ const ContatoSection: React.FC = () => {
     if (submitting) return;
     setSubmitting(true);
     try {
-      // Envia via FormSubmit (AJAX). Destino principal: lume@lumecreative.com.br; CC: lui.eduardo.lui@outlook.com
+      // Envia via API própria (proxy na Vercel) para evitar CORS/anti-spam
       const payload = {
-        name: formData.nome,
+        nome: formData.nome,
         email: formData.email,
-        subject: formData.assunto || 'Novo contato pelo site',
-        phone: formData.telefone,
-        message: formData.mensagem,
+        assunto: formData.assunto || 'Novo contato pelo site',
+        telefone: formData.telefone,
+        mensagem: formData.mensagem,
         _cc: 'lui.eduardo.lui@outlook.com',
         _subject: 'Novo contato - Lume Creative Studio',
         _template: 'table',
         _captcha: 'false',
       } as Record<string, string>;
 
-      const res = await fetch('https://formsubmit.co/ajax/lume@lumecreative.com.br', {
+      let res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload),
       });
+
+      // Se a API falhar, tenta diretamente no FormSubmit
+      if (!res.ok) {
+        res = await fetch('https://formsubmit.co/ajax/lume@lumecreative.com.br', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+      }
 
       if (!res.ok) {
         const text = await res.text();
