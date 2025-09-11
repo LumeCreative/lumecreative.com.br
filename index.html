@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUME Creative Studio</title>
+    <meta name="description" content="A Lume Creative Studio é uma agência digital especializada em design, marketing digital e produção audiovisual." />
+    <meta name="author" content="Lume Creative" />
+
+    <meta property="og:title" content="LUME Creative Studio" />
+    <meta property="og:description" content="A Lume Creative Studio é uma agência digital especializada em design, marketing digital e produção audiovisual." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lume-br.vercel.app/android-chrome-192x192.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lumecreative" />
+    <meta name="twitter:image" content="https://lume-br.vercel.app/android-chrome-192x192.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Clash Display Font -->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Forçar ocultação do banner do Google Translate o mais cedo possível -->
+    <style>
+      iframe.goog-te-banner-frame { display: none !important; }
+      .goog-te-banner-frame.skiptranslate { display: none !important; }
+      body { top: 0 !important; }
+      #google_translate_element, .goog-logo-link, .goog-te-gadget, .goog-te-gadget-simple { display: none !important; }
+    </style>
+  </head>
+  
+  <body>
+    <div id="root"></div>
+    <script>
+      // Hide Google Translate banner aggressively and early
+      (function() {
+        function hideGT() {
+          try {
+            var iframe = document.querySelector('iframe.goog-te-banner-frame');
+            if (iframe) {
+              iframe.style.display = 'none';
+              if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
+            }
+            var sels = ['.goog-te-banner-frame', '.goog-te-gadget', '.goog-te-gadget-simple', '#goog-gt-tt', '.skiptranslate'];
+            sels.forEach(function(sel){
+              document.querySelectorAll(sel).forEach(function(el){
+                el.style.display = 'none';
+              });
+            });
+            if (document.body) document.body.style.top = '0px';
+          } catch (e) {}
+        }
+        hideGT();
+        // Observe DOM changes and keep hiding if reinjected
+        var mo = new MutationObserver(hideGT);
+        mo.observe(document.documentElement, { childList: true, subtree: true });
+        window.addEventListener('load', hideGT);
+        document.addEventListener('DOMContentLoaded', hideGT);
+      })();
+    </script>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
