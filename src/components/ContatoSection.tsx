@@ -42,6 +42,7 @@ const ContatoSection: React.FC = () => {
       const payload = {
         nome: formData.nome,
         email: formData.email,
+        _replyto: formData.email,
         assunto: formData.assunto || 'Novo contato pelo site',
         telefone: formData.telefone,
         mensagem: formData.mensagem,

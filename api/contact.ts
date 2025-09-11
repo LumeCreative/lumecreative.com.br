@@ -21,6 +21,7 @@ export default async function handler(req: Request): Promise<Response> {
   const payload = {
     name: data?.name || data?.nome || '',
     email: data?.email || '',
+    _replyto: data?._replyto || data?.email || '',
     subject: data?.subject || data?.assunto || 'Novo contato pelo site',
     phone: data?.phone || data?.telefone || '',
     message: data?.message || data?.mensagem || '',
@@ -50,4 +51,3 @@ export default async function handler(req: Request): Promise<Response> {
     });
   }
 }
-
