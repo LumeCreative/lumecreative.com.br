@@ -48,19 +48,19 @@ export default function MultiLayerParallax() {
       <div className="w-full lg:max-w-screen-lg 2xl:max-w-screen-2xl mt-[40px] sm:mt-[-15px] px-3">
         <motion.h1
           style={{ y: textY }}
-          className="w-full font-semibold text-white text-[32px] xl:text-6xl 2xl:text-[5.5rem] relative z-10 tracking-[0.2em] mb-0 sm:mb-5"
+          className="w-full font-semibold text-white text-[32px] xl:text-6xl 2xl:text-[5.5rem] relative z-10 tracking-[0.2em] mb-0 sm:mb-5 textupper"
         >
           {isEnglish ? "ELEVATED" : "COMUNICA\u00C7\u00C3O"}
         </motion.h1>
         <motion.h1
           style={{ y: textY }}
-          className="w-full font-semibold text-white text-[32px] xl:text-6xl 2xl:text-[5.5rem] relative z-10 tracking-[0.2em] mb-0 sm:mb-5"
+          className="w-full font-semibold text-white text-[32px] xl:text-6xl 2xl:text-[5.5rem] relative z-10 tracking-[0.2em] mb-0 sm:mb-5 textupper"
         >
           {isEnglish ? "COMUNICATION," : "ELEVADA."}
         </motion.h1>
         <motion.h1
           style={{ y: textY }}
-          className="w-full font-regular text-white text-[32px] xl:text-6xl 2xl:text-[5.5rem] relative z-30 tracking-[0.2em] mb-2 xl:mb-20 2xl:mb-32"
+          className="w-full font-regular text-white text-[32px] xl:text-6xl 2xl:text-[5.5rem] relative z-30 tracking-[0.2em] mb-2 xl:mb-20 2xl:mb-32 textupper"
         >
           {isEnglish ? "VISIBLE TO ALL" : "VIS\u00CDVEL A TODOS!"}
         </motion.h1>
