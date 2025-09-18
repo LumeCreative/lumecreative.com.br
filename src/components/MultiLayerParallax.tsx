@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Logo from "../assets/Wiframe _ Site Lume _ v3-04.webp";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function MultiLayerParallax() {
   const ref = useRef(null);
@@ -11,6 +11,35 @@ export default function MultiLayerParallax() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
 
+  const [activeLang, setActiveLang] = useState<'pt' | 'en'>('pt');
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    try {
+      const stored = localStorage.getItem("preferredLanguage");
+      if (stored === "en" || stored === "pt") {
+        setActiveLang(stored);
+        return;
+      }
+
+      const match = document.cookie.match(/(?:^|; )googtrans=([^;]+)/);
+      if (match) {
+        const value = decodeURIComponent(match[1]);
+        if (value.endsWith("/en")) {
+          setActiveLang("en");
+        } else if (value.endsWith("/pt")) {
+          setActiveLang("pt");
+        }
+      }
+    } catch {
+      // storage access not available (non-browser contexts)
+    }
+  }, []);
+
+  const isEnglish = activeLang === "en";
   return (
     <div
       ref={ref}
@@ -21,19 +50,19 @@ export default function MultiLayerParallax() {
           style={{ y: textY }}
           className="w-full font-semibold text-white text-[32px] xl:text-6xl 2xl:text-[5.5rem] relative z-10 tracking-[0.2em] mb-0 sm:mb-5"
         >
-          COMUNICAÇÃO
+          {isEnglish ? "ELEVATED" : "COMUNICA\u00C7\u00C3O"}
         </motion.h1>
         <motion.h1
           style={{ y: textY }}
           className="w-full font-semibold text-white text-[32px] xl:text-6xl 2xl:text-[5.5rem] relative z-10 tracking-[0.2em] mb-0 sm:mb-5"
         >
-          ELEVADA.
+          {isEnglish ? "COMUNICATION," : "ELEVADA."}
         </motion.h1>
         <motion.h1
           style={{ y: textY }}
           className="w-full font-regular text-white text-[32px] xl:text-6xl 2xl:text-[5.5rem] relative z-30 tracking-[0.2em] mb-2 xl:mb-20 2xl:mb-32"
         >
-          VISÍVEL A TODOS!
+          {isEnglish ? "VISIBLE TO ALL" : "VIS\u00CDVEL A TODOS!"}
         </motion.h1>
       </div>
 
