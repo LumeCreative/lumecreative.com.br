@@ -15,10 +15,10 @@
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: #0A0A0A; }
   ::selection { background: #C8A87C; color: #0A0A0A; }
-  @keyframes lume-scrub { 0% { transform: translateX(-100%); } 100% { transform: translateX(0%); } }
+  a { color: #F4F1EC; }
+  a:hover { color: #C8A87C; }
   @keyframes lume-rise { 0% { opacity: 0; transform: translateY(24px); } 100% { opacity: 1; transform: translateY(0); } }
   @keyframes lume-grain { 0%,100% { opacity: .04; } 50% { opacity: .07; } }
-  @keyframes lume-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 </style>
 </helmet>
 
@@ -31,35 +31,37 @@
       <span style="font-family:'Inter Tight',sans-serif; font-weight:600; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC;">Lume</span>
     </a>
     <div style="display:flex; gap:36px; align-items:center;">
-      <a href="#cases" style="font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:#F4F1EC; text-decoration:none; opacity:.7;" style-hover="opacity:1;">Work</a>
+      <a href="#work" style="font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:#F4F1EC; text-decoration:none; opacity:.7;" style-hover="opacity:1;">Work</a>
       <a href="#services" style="font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:#F4F1EC; text-decoration:none; opacity:.7;" style-hover="opacity:1;">Services</a>
       <a href="#contato" style="font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:#F4F1EC; text-decoration:none; opacity:.7;" style-hover="opacity:1;">Contact</a>
     </div>
   </nav>
+
+  <!-- PROJECT INDEX RAIL -->
+  <div style="position:fixed; right:26px; top:50%; transform:translateY(-50%); z-index:40; display:flex; flex-direction:column; gap:16px; align-items:flex-end;">
+    <sc-for list="{{ navItems }}" as="ni" hint-placeholder-count="7">
+      <span onClick="{{ ni.go }}" style="{{ ni.style }}">{{ ni.label }}</span>
+    </sc-for>
+  </div>
 
   <!-- HERO -->
   <section id="top" style="position:relative; min-height:100vh; display:flex; flex-direction:column; justify-content:flex-end; padding:48px; overflow:hidden;">
     <div style="position:absolute; inset:0; background:radial-gradient(120% 90% at 50% 8%, rgba(200,168,124,.10) 0%, rgba(200,168,124,0) 46%), #0A0A0A; pointer-events:none;"></div>
     <div aria-hidden="true" style="position:absolute; inset:0; background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>'); animation:lume-grain 6s ease-in-out infinite; pointer-events:none; mix-blend-mode:overlay;"></div>
 
-    <div style="position:absolute; top:48px; right:48px; text-align:right; opacity:0; animation:lume-rise .9s ease both .2s;">
-      <div style="font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#C8A87C; opacity:.85;">Motion Design Studio</div>
-    </div>
-
     <div style="position:relative; max-width:1500px;">
-      <div style="opacity:0; animation:lume-rise .9s ease both .1s; font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#C8A87C; margin-bottom:28px;">Motion Design · Brand Animation · Film</div>
+      <div style="opacity:0; animation:lume-rise .9s ease both .1s; font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#C8A87C; margin-bottom:28px;">Motion Design Studio</div>
       <h1 style="opacity:0; animation:lume-rise 1s ease both .25s; font-family:'Inter Tight',sans-serif; font-weight:600; font-size:clamp(48px, 8.4vw, 138px); line-height:.92; letter-spacing:-.03em; margin:0; color:#F4F1EC;">
         Lume Creative<br><span style="color:#C8A87C;">Studio</span><span style="color:#C8A87C;">.</span>
       </h1>
       <p style="opacity:0; animation:lume-rise 1s ease both .42s; max-width:640px; margin:36px 0 0; font-size:clamp(17px,1.7vw,23px); line-height:1.45; font-weight:300; color:#F4F1EC; opacity:.82; text-wrap:pretty;">
         We break from the ordinary to build brands that move markets.
       </p>
-      <div style="opacity:0; animation:lume-rise 1s ease both .58s; display:flex; align-items:center; gap:28px; margin-top:44px;">
-        <a href="#cases" style="display:inline-flex; align-items:center; gap:12px; padding:16px 30px; background:#C8A87C; color:#0A0A0A; text-decoration:none; font-weight:600; font-size:13.5px; letter-spacing:.08em; text-transform:uppercase; border-radius:2px;" style-hover="background:#d8bb93;">
-          Watch the reel
-          <span style="font-size:15px;">▸</span>
+      <div style="opacity:0; animation:lume-rise 1s ease both .58s; margin-top:44px;">
+        <a href="#work" style="display:inline-flex; align-items:center; gap:12px; padding:16px 30px; background:#C8A87C; color:#0A0A0A; text-decoration:none; font-weight:600; font-size:13.5px; letter-spacing:.08em; text-transform:uppercase; border-radius:2px;" style-hover="background:#d8bb93;">
+          Watch the work
+          <span style="font-size:15px;">↓</span>
         </a>
-        <a href="#services" style="font-size:13.5px; letter-spacing:.08em; text-transform:uppercase; color:#F4F1EC; opacity:.6; text-decoration:none;" style-hover="opacity:1;">What we do</a>
       </div>
     </div>
 
@@ -69,49 +71,20 @@
     </div>
   </section>
 
-  <!-- MARQUEE STRIP -->
-  <div style="border-top:1px solid rgba(244,241,236,.08); border-bottom:1px solid rgba(244,241,236,.08); overflow:hidden; white-space:nowrap; padding:18px 0;">
-    <div style="display:inline-flex; gap:48px; animation:lume-marquee 28s linear infinite; will-change:transform;">
-      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">Brand Motion</span><span style="color:#C8A87C;">✦</span>
-      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">Motion Graphics</span><span style="color:#C8A87C;">✦</span>
-      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">3D &amp; Compositing</span><span style="color:#C8A87C;">✦</span>
-      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">Social Motion</span><span style="color:#C8A87C;">✦</span>
-      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">Brand Motion</span><span style="color:#C8A87C;">✦</span>
-      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">Motion Graphics</span><span style="color:#C8A87C;">✦</span>
-      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">3D &amp; Compositing</span><span style="color:#C8A87C;">✦</span>
-      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">Social Motion</span><span style="color:#C8A87C;">✦</span>
-    </div>
-  </div>
-
   <!-- WORK -->
-  <section id="cases" style="padding:116px 48px 40px;">
-    <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:clamp(48px,6vw,80px); flex-wrap:wrap; gap:16px;">
-      <div>
-        <div style="font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#C8A87C; margin-bottom:14px;">01 — Selected Work</div>
-        <h2 style="font-family:'Inter Tight',sans-serif; font-weight:500; font-size:clamp(30px,4.4vw,58px); line-height:1; letter-spacing:-.025em; margin:0; color:#F4F1EC;">Motion that moves markets.</h2>
-      </div>
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#F4F1EC; opacity:.45; max-width:260px; text-align:right;">Plays as you scroll ↓</div>
-    </div>
-
-    <div style="display:flex; flex-direction:column; gap:clamp(72px,8vw,128px);">
-      <sc-for list="{{ works }}" as="w" hint-placeholder-count="4">
+  <section id="work" style="padding:140px 96px 80px;">
+    <div style="display:flex; flex-direction:column; gap:clamp(110px,12vw,170px);">
+      <sc-for list="{{ works }}" as="w" hint-placeholder-count="7">
         <div ref="{{ w.stageRef }}" style="opacity:0; transform:translateY(36px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
-          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:22px; flex-wrap:wrap;">
-            <div style="display:flex; align-items:baseline; gap:22px;">
-              <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#C8A87C; opacity:.7;">{{ w.n }}</span>
-              <div>
-                <div style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#C8A87C; margin-bottom:9px;">{{ w.tag }}</div>
-                <h3 style="font-family:'Inter Tight',sans-serif; font-weight:500; font-size:clamp(24px,3vw,40px); line-height:1; letter-spacing:-.02em; margin:0; color:#F4F1EC;">{{ w.title }}</h3>
-              </div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; margin-bottom:20px;">
+            <div style="display:flex; align-items:baseline; gap:18px;">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#C8A87C; opacity:.7;">{{ w.n }}</span>
+              <h3 style="font-family:'Inter Tight',sans-serif; font-weight:500; font-size:clamp(20px,2.2vw,30px); line-height:1; letter-spacing:-.015em; margin:0; color:#F4F1EC;">{{ w.title }}</h3>
             </div>
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#F4F1EC; opacity:.4;">{{ w.dur }}</div>
+            <span style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#F4F1EC; opacity:.35;">Motion Design</span>
           </div>
-          <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:5px; overflow:hidden; background:#000; border:1px solid rgba(244,241,236,.10); box-shadow:0 40px 120px rgba(0,0,0,.55);">
-            <video ref="{{ w.ref }}" muted loop playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain;"></video>
-            <div style="position:absolute; top:18px; left:18px; display:flex; align-items:center; gap:8px;">
-              <span style="width:7px; height:7px; border-radius:50%; background:#C8A87C; display:inline-block; box-shadow:0 0 10px #C8A87C;"></span>
-              <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#F4F1EC; opacity:.65;">Playing</span>
-            </div>
+          <div ref="{{ w.frameRef }}" style="position:relative; width:100%; aspect-ratio:16/9; margin:0 auto; border-radius:6px; overflow:hidden; background:#000; border:1px solid rgba(244,241,236,.10); box-shadow:0 40px 120px rgba(0,0,0,.55);">
+            <video ref="{{ w.ref }}" muted loop playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></video>
           </div>
         </div>
       </sc-for>
@@ -119,16 +92,14 @@
   </section>
 
   <!-- SERVICES -->
-  <section id="services" style="padding:30px 48px 60px;">
-    <div style="margin-bottom:14px; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#C8A87C;">03 — Services</div>
-    <h2 style="font-family:'Inter Tight',sans-serif; font-weight:500; font-size:clamp(30px,4.4vw,58px); line-height:1; letter-spacing:-.025em; margin:0 0 50px; color:#F4F1EC; max-width:760px;">From concept to final delivery.</h2>
-
-    <div style="border-top:1px solid rgba(244,241,236,.10);">
+  <section id="services" style="padding:120px 96px 60px;">
+    <div style="margin-bottom:14px; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#C8A87C;">Services</div>
+    <h2 style="font-family:'Inter Tight',sans-serif; font-weight:500; font-size:clamp(30px,4vw,52px); line-height:1; letter-spacing:-.025em; margin:0 0 60px; color:#F4F1EC; max-width:760px;">Exclusively motion.</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:40px;">
       <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
-        <div style="display:grid; grid-template-columns:80px 1.1fr 2fr; gap:24px; align-items:baseline; padding:34px 8px; border-bottom:1px solid rgba(244,241,236,.10);" style-hover="background:rgba(200,168,124,.03);">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#C8A87C; opacity:.7;">{{ s.num }}</div>
-          <h3 style="font-family:'Inter Tight',sans-serif; font-weight:500; font-size:clamp(22px,2.4vw,32px); letter-spacing:-.01em; margin:0; color:#F4F1EC;">{{ s.name }}</h3>
-          <p style="font-size:15px; line-height:1.55; font-weight:300; color:#F4F1EC; opacity:.6; margin:0; max-width:480px; text-wrap:pretty;">{{ s.desc }}</p>
+        <div style="border-top:1px solid rgba(244,241,236,.14); padding-top:22px;">
+          <h3 style="font-family:'Inter Tight',sans-serif; font-weight:500; font-size:20px; letter-spacing:-.01em; margin:0 0 10px; color:#F4F1EC;">{{ s.name }}</h3>
+          <p style="font-size:14px; line-height:1.55; font-weight:300; color:#F4F1EC; opacity:.55; margin:0; text-wrap:pretty;">{{ s.desc }}</p>
         </div>
       </sc-for>
     </div>
@@ -138,7 +109,7 @@
   <section id="contato" style="padding:130px 48px 90px; text-align:center; position:relative;">
     <div style="position:absolute; inset:0; background:radial-gradient(80% 120% at 50% 100%, rgba(200,168,124,.10) 0%, rgba(200,168,124,0) 55%); pointer-events:none;"></div>
     <div style="position:relative;">
-      <div style="font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#C8A87C; margin-bottom:28px;">04 — Contact</div>
+      <div style="font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#C8A87C; margin-bottom:28px;">Contact</div>
       <h2 style="font-family:'Inter Tight',sans-serif; font-weight:600; font-size:clamp(38px,6.6vw,104px); line-height:.95; letter-spacing:-.03em; margin:0 auto; max-width:1100px; color:#F4F1EC; text-wrap:balance;">Let's build something<br>that moves markets.</h2>
       <a href="{{ mailto }}" style="display:inline-flex; align-items:center; gap:14px; margin-top:52px; padding:20px 40px; background:#C8A87C; color:#0A0A0A; text-decoration:none; font-weight:600; font-size:15px; letter-spacing:.06em; text-transform:uppercase; border-radius:2px;" style-hover="background:#d8bb93;">
         {{ email }}
@@ -154,7 +125,7 @@
       <span style="font-family:'Inter Tight',sans-serif; font-weight:600; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC;">Lume Creative Studio</span>
     </div>
     <a href="{{ mailto }}" style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#F4F1EC; opacity:.5; text-decoration:none;" style-hover="opacity:1;">{{ email }}</a>
-    <div style="font-size:12px; color:#F4F1EC; opacity:.35;">© 2025 Lume Creative Studio</div>
+    <div style="font-size:12px; color:#F4F1EC; opacity:.35;">© 2026 Lume Creative Studio</div>
   </footer>
 
 </div>
@@ -163,43 +134,53 @@
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.workRefs = Array.from({ length: 6 }, () => React.createRef());
-    this.stageRefs = Array.from({ length: 6 }, () => React.createRef());
+    this.state = { active: -1 };
+    const N = 8;
+    this.workRefs = Array.from({ length: N }, () => React.createRef());
+    this.stageRefs = Array.from({ length: N }, () => React.createRef());
+    this.frameRefs = Array.from({ length: N }, () => React.createRef());
     this._visible = {};
   }
 
   componentDidMount() {
     this._blobUrls = [];
-    const files = ['case_05', 'case_04', 'case_no', 'case_vertice', 'case_aurora', 'showreel'];
-    const load = (i) => {
+    const files = ['case_07', 'case_08', 'case_09', 'case_10', 'case_05', 'case_04', 'case_vertice', 'case_aurora'];
+    files.forEach((f, i) => {
       const v = this.workRefs[i] && this.workRefs[i].current;
       if (!v) return;
-      fetch('videos/' + files[i] + '.mp4').then(r => r.blob()).then(b => {
+      v.addEventListener('loadedmetadata', () => {
+        const frame = this.frameRefs[i] && this.frameRefs[i].current;
+        if (!frame || !v.videoWidth) return;
+        frame.style.aspectRatio = v.videoWidth + '/' + v.videoHeight;
+        if (v.videoHeight > v.videoWidth) { frame.style.maxWidth = '400px'; }
+      });
+      fetch('videos/' + f + '.mp4').then(r => r.blob()).then(b => {
         const url = URL.createObjectURL(b);
         this._blobUrls.push(url);
         v.src = url;
         v.load();
         if (this._visible[i]) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
       }).catch(() => {});
-    };
-    files.forEach((_, i) => load(i));
+    });
 
     this._io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         const idx = this.stageRefs.findIndex(r => r.current === e.target);
         if (idx < 0) return;
         const v = this.workRefs[idx].current;
-        const on = e.isIntersecting && e.intersectionRatio >= 0.5;
+        const on = e.isIntersecting && e.intersectionRatio >= 0.45;
         this._visible[idx] = on;
         if (on) {
           e.target.style.opacity = '1';
           e.target.style.transform = 'translateY(0)';
           if (v) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
-        } else if (v) {
-          v.pause();
+          this.setState({ active: idx });
+        } else {
+          if (v) v.pause();
+          if (this.state.active === idx) this.setState({ active: -1 });
         }
       });
-    }, { threshold: [0, 0.5, 0.9] });
+    }, { threshold: [0, 0.45, 0.9] });
     this.stageRefs.forEach(r => { if (r.current) this._io.observe(r.current); });
   }
 
@@ -208,35 +189,47 @@ class Component extends DCLogic {
     if (this._io) this._io.disconnect();
   }
 
-  _play(ref) {
-    const v = ref && ref.current;
-    if (v && typeof v.play === 'function') { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
-  }
-  _pause(ref) {
-    const v = ref && ref.current;
-    if (v && typeof v.pause === 'function') { v.pause(); }
+  _goTo(i) {
+    const el = this.stageRefs[i] && this.stageRefs[i].current;
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top, behavior: 'smooth' });
   }
 
   renderVals() {
-    const data = [
-      { n: '01', tag: 'Motion Design', title: 'Project 1', dur: '0:10' },
-      { n: '02', tag: 'Motion Design', title: 'Project 2', dur: '0:15' },
-      { n: '03', tag: 'Motion Design', title: 'Project 3', dur: '0:15' },
-      { n: '04', tag: 'Motion Design', title: 'Project 4', dur: '0:15' },
-      { n: '05', tag: 'Motion Design', title: 'Project 5', dur: '0:15' },
-      { n: '06', tag: 'Motion Design', title: 'Project 6', dur: '0:15' },
-    ];
-    const works = data.map((d, i) => ({ ...d, ref: this.workRefs[i], stageRef: this.stageRefs[i] }));
+    const nums = Array.from({ length: 8 }, (_, i) => String(i + 1).padStart(2, '0'));
+    const works = nums.map((n, i) => ({
+      n,
+      title: 'Project ' + (i + 1),
+      ref: this.workRefs[i],
+      stageRef: this.stageRefs[i],
+      frameRef: this.frameRefs[i],
+    }));
+
+    const navItems = nums.map((n, i) => ({
+      label: n,
+      go: () => this._goTo(i),
+      style: {
+        fontFamily: "'IBM Plex Mono',monospace",
+        fontSize: '11px',
+        letterSpacing: '.08em',
+        cursor: 'pointer',
+        userSelect: 'none',
+        transition: 'color .4s, opacity .4s',
+        color: this.state.active === i ? '#C8A87C' : '#F4F1EC',
+        opacity: this.state.active === i ? 1 : 0.32,
+      },
+    }));
 
     const services = [
-      { num: '01', name: 'Brand Motion', desc: 'Animated identity systems, logo reveals and brand-in-motion guidelines that make a brand unmistakable in any feed.' },
-      { num: '02', name: 'Motion Graphics', desc: 'Explainers, broadcast packages, kinetic typography and data brought to life with rhythm and intent.' },
-      { num: '03', name: 'Social & Performance', desc: 'Scroll-stopping vertical and square creative engineered for paid social, launches and campaigns.' },
-      { num: '04', name: '3D & Compositing', desc: 'Photoreal 3D, product animation and live-action compositing for premium, cinematic films.' },
+      { name: 'Brand Motion', desc: 'Animated identity systems and logo reveals that make a brand unmistakable in any feed.' },
+      { name: 'Motion Graphics', desc: 'Explainers, kinetic typography and data brought to life with rhythm and intent.' },
+      { name: 'Social & Performance', desc: 'Scroll-stopping vertical and square creative engineered for paid social and launches.' },
+      { name: '3D & Compositing', desc: 'Photoreal 3D, product animation and compositing for premium, cinematic films.' },
     ];
 
-    const email = 'lucas' + '@' + 'lumecreative' + '.com.br';
-    return { email, mailto: 'mailto:' + email, works, services };
+    const email = 'lucas' + '@' + 'growthbylume' + '.com.br';
+    return { works, navItems, services, email, mailto: 'mailto:' + email };
   }
 }
 </script>

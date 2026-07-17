@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #0A0A0A; }
+  ::selection { background: #C8A87C; color: #0A0A0A; }
+  @keyframes lume-scrub { 0% { transform: translateX(-100%); } 100% { transform: translateX(0%); } }
+  @keyframes lume-rise { 0% { opacity: 0; transform: translateY(24px); } 100% { opacity: 1; transform: translateY(0); } }
+  @keyframes lume-grain { 0%,100% { opacity: .04; } 50% { opacity: .07; } }
+  @keyframes lume-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+</style>
+</helmet>
+
+<div style="background:#0A0A0A; color:#F4F1EC; font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <!-- NAV -->
+  <nav style="position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:26px 48px; mix-blend-mode:difference;">
+    <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+      <span style="width:9px; height:9px; border-radius:50%; background:#C8A87C; display:inline-block;"></span>
+      <span style="font-family:'Inter Tight',sans-serif; font-weight:600; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC;">Lume</span>
+    </a>
+    <div style="display:flex; gap:36px; align-items:center;">
+      <a href="#cases" style="font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:#F4F1EC; text-decoration:none; opacity:.7;" style-hover="opacity:1;">Work</a>
+      <a href="#services" style="font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:#F4F1EC; text-decoration:none; opacity:.7;" style-hover="opacity:1;">Services</a>
+      <a href="#contato" style="font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:#F4F1EC; text-decoration:none; opacity:.7;" style-hover="opacity:1;">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="top" style="position:relative; min-height:100vh; display:flex; flex-direction:column; justify-content:flex-end; padding:48px; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:radial-gradient(120% 90% at 50% 8%, rgba(200,168,124,.10) 0%, rgba(200,168,124,0) 46%), #0A0A0A; pointer-events:none;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>'); animation:lume-grain 6s ease-in-out infinite; pointer-events:none; mix-blend-mode:overlay;"></div>
+
+    <div style="position:absolute; top:48px; right:48px; text-align:right; opacity:0; animation:lume-rise .9s ease both .2s;">
+      <div style="font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#C8A87C; opacity:.85;">Motion Design Studio</div>
+    </div>
+
+    <div style="position:relative; max-width:1500px;">
+      <div style="opacity:0; animation:lume-rise .9s ease both .1s; font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#C8A87C; margin-bottom:28px;">Motion Design · Brand Animation · Film</div>
+      <h1 style="opacity:0; animation:lume-rise 1s ease both .25s; font-family:'Inter Tight',sans-serif; font-weight:600; font-size:clamp(48px, 8.4vw, 138px); line-height:.92; letter-spacing:-.03em; margin:0; color:#F4F1EC;">
+        Lume Creative<br><span style="color:#C8A87C;">Studio</span><span style="color:#C8A87C;">.</span>
+      </h1>
+      <p style="opacity:0; animation:lume-rise 1s ease both .42s; max-width:640px; margin:36px 0 0; font-size:clamp(17px,1.7vw,23px); line-height:1.45; font-weight:300; color:#F4F1EC; opacity:.82; text-wrap:pretty;">
+        We break from the ordinary to build brands that move markets.
+      </p>
+      <div style="opacity:0; animation:lume-rise 1s ease both .58s; display:flex; align-items:center; gap:28px; margin-top:44px;">
+        <a href="#cases" style="display:inline-flex; align-items:center; gap:12px; padding:16px 30px; background:#C8A87C; color:#0A0A0A; text-decoration:none; font-weight:600; font-size:13.5px; letter-spacing:.08em; text-transform:uppercase; border-radius:2px;" style-hover="background:#d8bb93;">
+          Watch the reel
+          <span style="font-size:15px;">▸</span>
+        </a>
+        <a href="#services" style="font-size:13.5px; letter-spacing:.08em; text-transform:uppercase; color:#F4F1EC; opacity:.6; text-decoration:none;" style-hover="opacity:1;">What we do</a>
+      </div>
+    </div>
+
+    <div style="position:absolute; bottom:48px; right:48px; display:flex; align-items:center; gap:12px; opacity:.4; font-size:11px; letter-spacing:.2em; text-transform:uppercase;">
+      <span>Scroll</span>
+      <span style="width:1px; height:34px; background:linear-gradient(#F4F1EC, transparent); display:inline-block;"></span>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div style="border-top:1px solid rgba(244,241,236,.08); border-bottom:1px solid rgba(244,241,236,.08); overflow:hidden; white-space:nowrap; padding:18px 0;">
+    <div style="display:inline-flex; gap:48px; animation:lume-marquee 28s linear infinite; will-change:transform;">
+      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">Brand Motion</span><span style="color:#C8A87C;">✦</span>
+      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">Motion Graphics</span><span style="color:#C8A87C;">✦</span>
+      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">3D &amp; Compositing</span><span style="color:#C8A87C;">✦</span>
+      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">Social Motion</span><span style="color:#C8A87C;">✦</span>
+      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">Brand Motion</span><span style="color:#C8A87C;">✦</span>
+      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">Motion Graphics</span><span style="color:#C8A87C;">✦</span>
+      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">3D &amp; Compositing</span><span style="color:#C8A87C;">✦</span>
+      <span style="font-family:'Inter Tight',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC; opacity:.4;">Social Motion</span><span style="color:#C8A87C;">✦</span>
+    </div>
+  </div>
+
+  <!-- WORK -->
+  <section id="cases" style="padding:116px 48px 40px;">
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:clamp(48px,6vw,80px); flex-wrap:wrap; gap:16px;">
+      <div>
+        <div style="font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#C8A87C; margin-bottom:14px;">01 — Selected Work</div>
+        <h2 style="font-family:'Inter Tight',sans-serif; font-weight:500; font-size:clamp(30px,4.4vw,58px); line-height:1; letter-spacing:-.025em; margin:0; color:#F4F1EC;">Motion that moves markets.</h2>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#F4F1EC; opacity:.45; max-width:260px; text-align:right;">Plays as you scroll ↓</div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:clamp(72px,8vw,128px);">
+      <sc-for list="{{ works }}" as="w" hint-placeholder-count="4">
+        <div ref="{{ w.stageRef }}" style="opacity:0; transform:translateY(36px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:22px; flex-wrap:wrap;">
+            <div style="display:flex; align-items:baseline; gap:22px;">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#C8A87C; opacity:.7;">{{ w.n }}</span>
+              <div>
+                <div style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#C8A87C; margin-bottom:9px;">{{ w.tag }}</div>
+                <h3 style="font-family:'Inter Tight',sans-serif; font-weight:500; font-size:clamp(24px,3vw,40px); line-height:1; letter-spacing:-.02em; margin:0; color:#F4F1EC;">{{ w.title }}</h3>
+              </div>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#F4F1EC; opacity:.4;">{{ w.dur }}</div>
+          </div>
+          <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:5px; overflow:hidden; background:#000; border:1px solid rgba(244,241,236,.10); box-shadow:0 40px 120px rgba(0,0,0,.55);">
+            <video ref="{{ w.ref }}" muted loop playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain;"></video>
+            <div style="position:absolute; top:18px; left:18px; display:flex; align-items:center; gap:8px;">
+              <span style="width:7px; height:7px; border-radius:50%; background:#C8A87C; display:inline-block; box-shadow:0 0 10px #C8A87C;"></span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#F4F1EC; opacity:.65;">Playing</span>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="padding:30px 48px 60px;">
+    <div style="margin-bottom:14px; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#C8A87C;">03 — Services</div>
+    <h2 style="font-family:'Inter Tight',sans-serif; font-weight:500; font-size:clamp(30px,4.4vw,58px); line-height:1; letter-spacing:-.025em; margin:0 0 50px; color:#F4F1EC; max-width:760px;">From concept to final delivery.</h2>
+
+    <div style="border-top:1px solid rgba(244,241,236,.10);">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+        <div style="display:grid; grid-template-columns:80px 1.1fr 2fr; gap:24px; align-items:baseline; padding:34px 8px; border-bottom:1px solid rgba(244,241,236,.10);" style-hover="background:rgba(200,168,124,.03);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#C8A87C; opacity:.7;">{{ s.num }}</div>
+          <h3 style="font-family:'Inter Tight',sans-serif; font-weight:500; font-size:clamp(22px,2.4vw,32px); letter-spacing:-.01em; margin:0; color:#F4F1EC;">{{ s.name }}</h3>
+          <p style="font-size:15px; line-height:1.55; font-weight:300; color:#F4F1EC; opacity:.6; margin:0; max-width:480px; text-wrap:pretty;">{{ s.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contato" style="padding:130px 48px 90px; text-align:center; position:relative;">
+    <div style="position:absolute; inset:0; background:radial-gradient(80% 120% at 50% 100%, rgba(200,168,124,.10) 0%, rgba(200,168,124,0) 55%); pointer-events:none;"></div>
+    <div style="position:relative;">
+      <div style="font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#C8A87C; margin-bottom:28px;">04 — Contact</div>
+      <h2 style="font-family:'Inter Tight',sans-serif; font-weight:600; font-size:clamp(38px,6.6vw,104px); line-height:.95; letter-spacing:-.03em; margin:0 auto; max-width:1100px; color:#F4F1EC; text-wrap:balance;">Let's build something<br>that moves markets.</h2>
+      <a href="{{ mailto }}" style="display:inline-flex; align-items:center; gap:14px; margin-top:52px; padding:20px 40px; background:#C8A87C; color:#0A0A0A; text-decoration:none; font-weight:600; font-size:15px; letter-spacing:.06em; text-transform:uppercase; border-radius:2px;" style-hover="background:#d8bb93;">
+        {{ email }}
+        <span>↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid rgba(244,241,236,.08); padding:36px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span style="width:8px; height:8px; border-radius:50%; background:#C8A87C; display:inline-block;"></span>
+      <span style="font-family:'Inter Tight',sans-serif; font-weight:600; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EC;">Lume Creative Studio</span>
+    </div>
+    <a href="{{ mailto }}" style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#F4F1EC; opacity:.5; text-decoration:none;" style-hover="opacity:1;">{{ email }}</a>
+    <div style="font-size:12px; color:#F4F1EC; opacity:.35;">© 2025 Lume Creative Studio</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.workRefs = Array.from({ length: 6 }, () => React.createRef());
+    this.stageRefs = Array.from({ length: 6 }, () => React.createRef());
+    this._visible = {};
+  }
+
+  componentDidMount() {
+    this._blobUrls = [];
+    const files = ['case_05', 'case_04', 'case_no', 'case_vertice', 'case_aurora', 'showreel'];
+    const load = (i) => {
+      const v = this.workRefs[i] && this.workRefs[i].current;
+      if (!v) return;
+      fetch('videos/' + files[i] + '.mp4').then(r => r.blob()).then(b => {
+        const url = URL.createObjectURL(b);
+        this._blobUrls.push(url);
+        v.src = url;
+        v.load();
+        if (this._visible[i]) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+      }).catch(() => {});
+    };
+    files.forEach((_, i) => load(i));
+
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const idx = this.stageRefs.findIndex(r => r.current === e.target);
+        if (idx < 0) return;
+        const v = this.workRefs[idx].current;
+        const on = e.isIntersecting && e.intersectionRatio >= 0.5;
+        this._visible[idx] = on;
+        if (on) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          if (v) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+        } else if (v) {
+          v.pause();
+        }
+      });
+    }, { threshold: [0, 0.5, 0.9] });
+    this.stageRefs.forEach(r => { if (r.current) this._io.observe(r.current); });
+  }
+
+  componentWillUnmount() {
+    (this._blobUrls || []).forEach(u => URL.revokeObjectURL(u));
+    if (this._io) this._io.disconnect();
+  }
+
+  _play(ref) {
+    const v = ref && ref.current;
+    if (v && typeof v.play === 'function') { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+  }
+  _pause(ref) {
+    const v = ref && ref.current;
+    if (v && typeof v.pause === 'function') { v.pause(); }
+  }
+
+  renderVals() {
+    const data = [
+      { n: '01', tag: 'Motion Design', title: 'Project 1', dur: '0:10' },
+      { n: '02', tag: 'Motion Design', title: 'Project 2', dur: '0:15' },
+      { n: '03', tag: 'Motion Design', title: 'Project 3', dur: '0:15' },
+      { n: '04', tag: 'Motion Design', title: 'Project 4', dur: '0:15' },
+      { n: '05', tag: 'Motion Design', title: 'Project 5', dur: '0:15' },
+      { n: '06', tag: 'Motion Design', title: 'Project 6', dur: '0:15' },
+    ];
+    const works = data.map((d, i) => ({ ...d, ref: this.workRefs[i], stageRef: this.stageRefs[i] }));
+
+    const services = [
+      { num: '01', name: 'Brand Motion', desc: 'Animated identity systems, logo reveals and brand-in-motion guidelines that make a brand unmistakable in any feed.' },
+      { num: '02', name: 'Motion Graphics', desc: 'Explainers, broadcast packages, kinetic typography and data brought to life with rhythm and intent.' },
+      { num: '03', name: 'Social & Performance', desc: 'Scroll-stopping vertical and square creative engineered for paid social, launches and campaigns.' },
+      { num: '04', name: '3D & Compositing', desc: 'Photoreal 3D, product animation and live-action compositing for premium, cinematic films.' },
+    ];
+
+    const email = 'lucas' + '@' + 'lumecreative' + '.com.br';
+    return { email, mailto: 'mailto:' + email, works, services };
+  }
+}
+</script>
+</body>
+</html>
