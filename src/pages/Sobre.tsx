@@ -79,6 +79,9 @@ const Sobre: React.FC = () => {
                   <b>Somos a Lume.</b>
                 </p>
                 <p>
+                  Lume Creative é o nome fantasia da NAVARRO MARKETING LTDA.
+                </p>
+                <p>
                   Um time apaixonado por criar, planejar e executar comunicação que faz diferença.
                 </p>
                 <p>
