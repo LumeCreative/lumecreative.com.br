@@ -18,6 +18,9 @@ const Footer: React.FC = () => {
               &copy; {currentYear} <span className="notranslate" translate="no">Lume Creative Studio</span>.
               <br />Todos os direitos reservados.
             </p>
+            <p className="mt-2 text-xs">
+              Lume Creative é o nome fantasia da NAVARRO MARKETING LTDA.
+            </p>
           </div>
           <div className="w-full sm:w-fit text-white text-sm sm:text-xs 2xl:text-base text-start">
             <p>
